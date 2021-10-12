@@ -1,0 +1,32 @@
+/* Container for current temperature */
+.currentTempContainer{
+    @apply flex flex-row justify-between border-b-2;
+}
+
+.tempLocDateContainer{
+  @apply container;
+}
+
+.currentTemp {
+    @apply text-9xl font-light py-2 px-4 ml-20 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+}
+
+.locDate{
+  @apply flex flex-col text-lg ml-20 mt-4;
+}
+
+.icon {
+  @apply float-left leading-tight align-bottom mt-2;
+}
+
+.location {
+  @apply inline-block float-left text-right leading-tight align-bottom ml-4 mt-2;
+}
+
+.imgContainer{
+  @apply container;
+}
+
+.currentTempImg{
+  @apply block ml-auto mr-auto w-60 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+}

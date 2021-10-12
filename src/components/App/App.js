@@ -1,8 +1,17 @@
-import './App.module.css';
+import CurrentTemperature from '../CurrentTemperature/CurrentTemperature';
+import DailyTemperature from '../DailyTemperature/DailyTemperature';
+import classes from './App.module.css';
 
 function App() {
+
   return (
-    <h1>Darshil</h1>
+    <div className = {classes.wrapperContainer}>  
+
+      <CurrentTemperature />
+
+      <DailyTemperature />
+      
+    </div>
   );
 }
 

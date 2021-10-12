@@ -1,0 +1,10 @@
+@layer base{
+    body{
+      @apply backdrop-filter backdrop-blur-3xl bg-green-500;
+    }
+  }
+
+/* Main container */
+.wrapperContainer {
+    @apply container bg-white shadow-2xl border-solid border-2 border-black rounded-xl mx-auto w-5/12 h-auto mt-10 border-green-500;
+}

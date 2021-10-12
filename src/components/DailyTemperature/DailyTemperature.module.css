@@ -1,0 +1,24 @@
+/* Container for next days temperature */
+.dailyTempContainer{
+    @apply grid grid-cols-4 gap-4 py-3 px-3;
+  }
+  
+  .perDayContainer{
+    @apply box-content h-auto w-auto border-2 rounded-xl border-gray-500 text-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+  }
+  
+  .perDay{
+    @apply text-center mt-4 font-serif;
+  }
+  
+  .perDayImg{
+    @apply block ml-auto mr-auto w-20;
+  }
+  
+  .minmaxContainer{
+    @apply flex flex-row justify-evenly;
+  }
+  
+  .minmaxFont{
+    @apply text-lg px-2 py-2 font-serif;
+  }
