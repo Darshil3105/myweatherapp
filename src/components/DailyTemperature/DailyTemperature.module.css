@@ -1,10 +1,10 @@
 /* Container for next days temperature */
 .dailyTempContainer{
-    @apply grid grid-cols-4 gap-4 py-3 px-3;
+    @apply grid py-3 px-3;
   }
   
   .perDayContainer{
-    @apply box-content h-auto w-auto border-2 rounded-xl border-gray-500 text-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+    @apply box-content h-auto w-auto border-2 rounded-xl border-gray-500 hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
   }
   
   .perDay{
@@ -12,7 +12,7 @@
   }
   
   .perDayImg{
-    @apply block ml-auto mr-auto w-20;
+    @apply block ml-auto mr-auto;
   }
   
   .minmaxContainer{
@@ -20,5 +20,77 @@
   }
   
   .minmaxFont{
-    @apply text-lg px-2 py-2 font-serif;
+    @apply px-2 py-2 font-serif;
+  }
+
+  @media screen(mobile-s) {
+    .dailyTempContainer{
+      @apply grid-cols-2 gap-1;
+    }
+
+    .perDayContainer{
+      @apply text-xs;
+    }
+
+    .perDayImg{
+      @apply w-10;
+    }
+
+    .minmaxFont{
+      @apply text-xs;
+    }
+  }
+
+  @media screen(tab) {
+    .dailyTempContainer{
+      @apply grid-cols-4 gap-2;
+    }
+
+    .perDayContainer{
+      @apply text-sm;
+    }
+
+    .perDayImg{
+      @apply w-12;
+    }
+
+    .minmaxFont{
+      @apply text-sm;
+    }
+  }
+
+  @media screen(lg) {
+    .dailyTempContainer{
+      @apply gap-3;
+    }
+
+    .perDayContainer{
+      @apply text-base;
+    }
+
+    .perDayImg{
+      @apply w-16;
+    }
+
+    .minmaxFont{
+      @apply text-base;
+    }
+  }
+
+  @media screen(xl) {
+    .dailyTempContainer{
+      @apply gap-4;
+    }
+
+    .perDayContainer{
+      @apply text-lg;
+    }
+
+    .perDayImg{
+      @apply w-20;
+    }
+
+    .minmaxFont{
+      @apply text-lg;
+    }
   }

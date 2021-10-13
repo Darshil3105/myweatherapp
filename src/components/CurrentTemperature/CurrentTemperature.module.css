@@ -8,11 +8,11 @@
 }
 
 .currentTemp {
-    @apply text-9xl font-light py-2 px-4 ml-20 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+    @apply font-light py-2 cursor-default transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
 }
 
 .locDate{
-  @apply flex flex-col text-lg ml-20 mt-4;
+  @apply flex flex-col;
 }
 
 .icon {
@@ -20,7 +20,7 @@
 }
 
 .location {
-  @apply inline-block float-left text-right leading-tight align-bottom ml-4 mt-2;
+  @apply inline-block float-left text-right leading-tight align-bottom mt-2;
 }
 
 .imgContainer{
@@ -28,5 +28,61 @@
 }
 
 .currentTempImg{
-  @apply block ml-auto mr-auto w-60 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+  @apply block ml-auto mr-auto transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110;
+}
+
+@media screen(mobile-s) {
+  .currentTemp {
+    @apply text-6xl px-2 ml-4;
+  }
+
+  .locDate{
+    @apply text-xs mt-2 ml-2;
+  }
+
+  .location {
+    @apply ml-1;
+  }
+  
+  .currentTempImg{
+    @apply w-40;
+  }
+}
+
+@media screen(tab) {
+  .currentTemp {
+    @apply text-8xl px-4 ml-8;
+  }
+
+  .locDate{
+    @apply text-sm mt-2 ml-8;
+  } 
+
+  .currentTempImg{
+    @apply w-56;
+  }
+}
+
+@media screen(lg) {
+  .locDate{
+    @apply text-base;
+  }
+
+  .currentTempImg{
+    @apply w-60;
+  }
+}
+
+@media screen(xl) {
+  .currentTemp {
+    @apply text-9xl ml-20;
+  }
+
+  .locDate{
+    @apply text-lg ml-20 mt-4;
+  }
+
+  .location {
+    @apply ml-4;
+  }
 }

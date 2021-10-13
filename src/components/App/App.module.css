@@ -1,10 +1,28 @@
 @layer base{
     body{
-      @apply backdrop-filter backdrop-blur-3xl bg-green-500;
+      @apply backdrop-filter bg-green-500;
     }
   }
 
 /* Main container */
 .wrapperContainer {
-    @apply container bg-white shadow-2xl border-solid border-2 border-black rounded-xl mx-auto w-5/12 h-auto mt-10 border-green-500;
+    @apply container bg-white border-solid border-2 border-black rounded-xl mx-auto h-auto mt-10 border-green-500;
+}
+
+@media screen(mobile-s) {
+  .wrapperContainer{
+    @apply w-10/12;
+  }
+}
+
+@media screen(tab) {
+  .wrapperContainer{
+    @apply w-11/12;
+  }
+}
+
+@media screen(xl) {
+  .wrapperContainer{
+    @apply w-5/12;
+  }
 }
