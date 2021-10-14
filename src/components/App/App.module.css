@@ -21,6 +21,12 @@
   }
 }
 
+@media screen(lg) {
+  .wrapperContainer{
+    @apply w-9/12;
+  }
+}
+
 @media screen(xl) {
   .wrapperContainer{
     @apply w-5/12;

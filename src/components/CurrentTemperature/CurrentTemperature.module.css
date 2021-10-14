@@ -40,6 +40,10 @@
     @apply text-xs mt-2 ml-2;
   }
 
+  .icon{
+    @apply hidden;
+  }
+
   .location {
     @apply ml-1;
   }
@@ -58,22 +62,16 @@
     @apply text-sm mt-2 ml-8;
   } 
 
+  .icon{
+    @apply block;
+  }
+
   .currentTempImg{
     @apply w-56;
   }
 }
 
 @media screen(lg) {
-  .locDate{
-    @apply text-base;
-  }
-
-  .currentTempImg{
-    @apply w-60;
-  }
-}
-
-@media screen(xl) {
   .currentTemp {
     @apply text-9xl ml-20;
   }
@@ -84,5 +82,9 @@
 
   .location {
     @apply ml-4;
+  }
+
+  .currentTempImg{
+    @apply w-60;
   }
 }

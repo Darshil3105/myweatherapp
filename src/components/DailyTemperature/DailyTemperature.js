@@ -3,195 +3,56 @@ import classes from "./DailyTemperature.module.css";
 
 export default function DailyTemperature(props){
 
-    let date = new Date();
-    date = date.toString();
-    const url = "https://openweathermap.org/img/wn/02n@2x.png";
+  let newDate = new Date(props.date);
+  let days = '';
+  const allDays = [];
 
-    return(
-        <div className = {classes.dailyTempContainer}>
-        <div className = {classes.perDayContainer}>
+  const dailyWeather = () => {
+    const perDayWeather = [];
+
+    for(let i = 1;i <= 8;i++){
+      newDate.setDate(newDate.getDate() + 1);
+      days = newDate.toString();
+      allDays.push(days.substr(0,3));
+    }
+
+    for(let i = 0;i < 8;i++){
+
+      let icons = props.dailyIcons[i];
+      icons = icons + "@2x.png";
+      const url = "https://openweathermap.org/img/wn/"+icons;
+
+      perDayWeather.push(
+        <div className = {classes.perDayContainer} key = {i}>
           <div className = {classes.perDay}>
-            {date.substr(0,3)}
+            {allDays[i]}
           </div>
 
           <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
+            <img src = {url}  alt = {props.dailyMain[i]} />
           </div>
 
           <div className = {classes.minmaxContainer}>
             
             <div className = {classes.minmaxFont}>
-              7&deg;
+              {Math.round(props.minTemp[i])}&deg;
             </div>
 
             <div className = {classes.minmaxFont}>
-              -5&deg;
+              {Math.round(props.maxTemp[i])}&deg;
             </div>
 
           </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
           </div>
+      );
+    }
 
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
+    return perDayWeather;
+  }
 
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
-          </div>
-          
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
-
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
-          </div>
-          
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
-
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
-          </div>
-          
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
-
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
-          </div>
-          
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
-
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
-          </div>
-          
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
-
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className = {classes.perDayContainer}>
-          <div className = {classes.perDay}>
-            {date.substr(0,3)}
-          </div>
-          
-          <div className = {classes.perDayImg}>
-            <img src = {url}  alt = "clouds" />
-          </div>
-
-          <div className = {classes.minmaxContainer}>
-            
-            <div className = {classes.minmaxFont}>
-              7&deg;
-            </div>
-
-            <div className = {classes.minmaxFont}>
-              -5&deg;
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    );
+  return(
+    <div className={classes.dailyTempContainer}>
+      {dailyWeather()}
+    </div>
+  );
 };
